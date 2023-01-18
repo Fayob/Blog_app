@@ -4,7 +4,7 @@ class CreateLike < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    add_reference :likes, :user, null: false, foreign_key: true
+    add_reference :likes, :post, null: false, foreign_key: true
   end
-  add_reference :likes, :user, null: false, foreign_key: true
-  add_reference :likes, :post, null: false, foreign_key: true
 end

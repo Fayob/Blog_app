@@ -8,5 +8,6 @@ class CreateUser < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+    change_column :users, :bio, :text
   end
 end
