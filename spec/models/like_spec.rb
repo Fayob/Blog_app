@@ -1,7 +1,6 @@
 require './spec/rails_helper'
 
 RSpec.describe Like, type: :model do
-
   subject { Like.create(author_id: 1, post_id: 2) }
 
   before { subject.save }

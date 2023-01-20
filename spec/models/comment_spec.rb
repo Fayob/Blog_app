@@ -1,9 +1,7 @@
 require './spec/rails_helper'
 
 RSpec.describe Comment, type: :model do
-
-  subject { Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!' ) }
-  
+  subject { Comment.create(post_id: 1, author_id: 2, text: 'Hi Tom!') }
 
   before { subject.save }
 

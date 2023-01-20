@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'should test for empty name' do
-    subject.name = ""
+    subject.name = ''
     expect(subject).to_not be_valid
   end
 

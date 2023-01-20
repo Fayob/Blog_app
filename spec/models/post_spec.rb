@@ -1,7 +1,6 @@
 require './spec/rails_helper'
 
 RSpec.describe Post, type: :model do
-
   subject { Post.create(author_id: 1, title: 'Hello', text: 'This is my first post') }
 
   before { subject.save }
