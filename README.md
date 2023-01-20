@@ -122,13 +122,13 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🔭 Future Features <a name="future-features"></a>
+<!-- ## 🔭 Future Features <a name="future-features"></a> -->
 
-- [ ] A graphical user interface
+<!-- - [ ] A graphical user interface
 - [ ] Better information validation
-- [ ] A backend to store the data
+- [ ] A backend to store the data -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
