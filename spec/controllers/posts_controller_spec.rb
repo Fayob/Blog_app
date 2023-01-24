@@ -1,6 +1,6 @@
 require './spec/rails_helper'
 
-describe PostsController, type.request do
+describe PostsController, type: :request do
   describe 'test for index method' do
     before(:each) do
       get '/users/:id/posts'

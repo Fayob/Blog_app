@@ -1,6 +1,6 @@
 require './spec/rails_helper'
 
-describe UsersController, type.request do
+describe UsersController, type: :request do
   describe 'test for index method' do
     it 'should test for request status of root url' do
       get '/'
