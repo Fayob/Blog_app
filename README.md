@@ -27,7 +27,7 @@
 
 # 📖 BLOG_APP <a name="about-project"></a>
 
-** Blog App ** is a classic example of a blog website. A fully functional website that show the list of posts and empower readers to interact with them by adding comments and liking posts...
+**Blog App** is a classic example of a blog website. A fully functional website that show the list of posts and empower readers to interact with them by adding comments and liking posts...
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -165,7 +165,7 @@ We would like to thank the Microverse staff for all the efforts they put in defi
 
   - No you do not. -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## 📝 License <a name="license"></a>
 
