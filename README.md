@@ -9,25 +9,25 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  <!-- - [🚀 Live Demo](#live-demo) -->
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
-  - [Usage](#usage)
+  <!-- - [Usage](#usage) -->
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  <!-- - [Deployment](#triangular_flag_on_post-deployment) -->
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
+<!-- - [❓ FAQ (OPTIONAL)](#faq) -->
 - [📝 License](#license)
 
 # 📖 BLOG_APP <a name="about-project"></a>
 
-** Blog App ** is a classic example of a blog website. A fully functional website that show the list of posts and empower readers to interact with them by adding comments and liking posts...
+**Blog App** is a classic example of a blog website. A fully functional website that show the list of posts and empower readers to interact with them by adding comments and liking posts...
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -37,11 +37,12 @@
   <summary>Client</summary>
   <ul>
     <li><a href="https://ruby-lang.org/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
 <details>
-  <summary>Framework</summary>
+  <summary>Server</summary>
   <ul>
     <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
@@ -90,15 +91,17 @@ Clone this [repository](https://github.com/Fayob/blog_app) to your desired folde
 Install this project with:
 
 ```sh
-  gem install
+  bundle install
+  rails db:create
+  rails db:migrate
 ```
 
-<!-- ### Usage
+### Start
 
-To run the project, execute the following command in your terminal:
+To start the application, run the following command
 
 ```sh
-  ruby src/main.rb
+  rails server
 ```
 
 ### Run tests
@@ -106,10 +109,10 @@ To run the project, execute the following command in your terminal:
 To run tests, run the following command:
 
 ```sh
-  rspec spec
+  rspec
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 👥 Authors <a name="authors"></a>
@@ -122,13 +125,13 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ## 🔭 Future Features <a name="future-features"></a> -->
+## 🔭 Future Features <a name="future-features"></a>
 
-<!-- - [ ] A graphical user interface
-- [ ] Better information validation
-- [ ] A backend to store the data -->
+- [ ] Ability for user to create account and post article easily 
+- [ ] Article content prediction
+- [ ] A better user interface
 
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -162,7 +165,7 @@ We would like to thank the Microverse staff for all the efforts they put in defi
 
   - No you do not. -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## 📝 License <a name="license"></a>
 

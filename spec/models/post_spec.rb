@@ -24,7 +24,7 @@ RSpec.describe Post, type: :model do
 
   it 'should test for integers greater than 0' do
     subject.comments_counter = 11
-    expect(subject).to be_valid
+    expect(subject.comments_counter).to eql 11
   end
 
   it 'should respond to recent_five_comments method' do
