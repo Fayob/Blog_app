@@ -93,23 +93,23 @@ Install this project with:
   gem install
 ```
 
-<!-- ### Usage
+### Usage
 
-To run the project, execute the following command in your terminal:
+<!-- To run the project, execute the following command in your terminal:
 
 ```sh
   ruby src/main.rb
-```
+``` -->
 
 ### Run tests
 
 To run tests, run the following command:
 
 ```sh
-  rspec spec
+  rspec ./spec/controllers/users_controller_spec.rb
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 👥 Authors <a name="authors"></a>
@@ -122,13 +122,13 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ## 🔭 Future Features <a name="future-features"></a> -->
+## 🔭 Future Features <a name="future-features"></a>
 
-<!-- - [ ] A graphical user interface
-- [ ] Better information validation
-- [ ] A backend to store the data -->
+- [ ] Ability for user to create account and post article easily 
+- [ ] Article content prediction
+- [ ] A better user interface
 
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
