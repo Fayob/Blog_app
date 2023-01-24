@@ -10,7 +10,7 @@ describe PostsController, type: :request do
       expect(response).to have_http_status(:ok)
     end
     it 'should render index' do
-      expect(response).to render_template(:index)
+      expect(response).to render_template(:posts_index)
     end
 
     it 'should test for response body' do
@@ -27,7 +27,7 @@ describe PostsController, type: :request do
     end
 
     it 'should render show' do
-      expect(response).to render_template(:show)
+      expect(response).to render_template(:posts_show)
     end
 
     it 'should test for response body' do
