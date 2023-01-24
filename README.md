@@ -37,11 +37,12 @@
   <summary>Client</summary>
   <ul>
     <li><a href="https://ruby-lang.org/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
 <details>
-  <summary>Framework</summary>
+  <summary>Server</summary>
   <ul>
     <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
@@ -90,23 +91,25 @@ Clone this [repository](https://github.com/Fayob/blog_app) to your desired folde
 Install this project with:
 
 ```sh
-  gem install
+  bundle install
+  rails db:create
+  rails db:migrate
 ```
 
-### Usage
+### Start
 
-<!-- To run the project, execute the following command in your terminal:
+To start the application, run the following command
 
 ```sh
-  ruby src/main.rb
-``` -->
+  rails server
+```
 
 ### Run tests
 
 To run tests, run the following command:
 
 ```sh
-  rspec ./spec/controllers/users_controller_spec.rb
+  rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
