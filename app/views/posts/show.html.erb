@@ -1,0 +1,14 @@
+<div id = 'card_text'>
+  <h2><%= @post.title %></h2> 
+  <p><%= @post.text%></p>
+  <p><%= @post.comments_counter%> comments</p>
+  <p><%= @post.likes_counter%> likes</p>
+  <%comment = Comment.where(post_id: @post.id)%>
+  <%comment.each_with_index do |comment, index|%>
+  <%user = User.find(comment.author_id)%>
+    <p>comment #<%= index + 1 %></p>
+    <h4></h4> 
+    <p><%= user.name %>: <%= comment.text %></p>
+  <% end %>
+  <p>posts id <%= @post.id %></p>  <br>
+</div>
