@@ -1,0 +1,21 @@
+<h1>All Post here</h1>
+
+<article id = 'card'>
+  <img src=<%@user.photo%> alt=<%@user.name%> id = 'card_img'>
+  <h2><%= @user.name%></h2>
+  <p><%= @user.bio%></p>
+
+  <% @posts.each_with_index do |post, index| %>
+    <p>post #<%= index + 1 %></p>
+    <div id = 'card_text'>
+      <h2><%= post.title %></h2> 
+      <p><%= post.text%></p>
+      <%comment = Comment.where(post_id: post.id)%>
+      <%comment.each_with_index do |comment, index|%>
+        <p>comment #<%= index + 1 %></p> 
+        <p><%= comment.text %></p>
+      <% end %>
+     <p>posts id <%= post.id %></p>  <br>
+    </div>
+  <% end %>
+</article>
