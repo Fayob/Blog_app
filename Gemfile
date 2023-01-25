@@ -76,5 +76,5 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem 'jsbundling-rails'  # needed for bootstrap javascript
 gem 'cssbundling-rails' # Install bootstrap 5
+gem 'jsbundling-rails' # needed for bootstrap javascript
