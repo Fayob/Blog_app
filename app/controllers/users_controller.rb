@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
   def index
-    render 'users_index'
+    @users = User.all
   end
 
   def show
-    # @user = User.find(params[:id])
-    render 'users_show'
+      @user = User.find(params[:id])
+      @posts = Post.where(author_id: @user.id)
   end
 end
