@@ -1,0 +1,15 @@
+#card {
+  /* display: inline; */
+  border: 1px, solid, black;
+  margin: 1rem;
+}
+
+#card_img {
+  display: inline;
+}
+
+#card_text {
+  display: inline;
+  background: green;
+}
+
