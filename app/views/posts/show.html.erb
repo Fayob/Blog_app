@@ -10,4 +10,22 @@
     <p>comment #<%= index + 1 %></p>
     <p><%= user.name %>: <%= comment.text %></p>
   <% end %>
+
+  <%= form_with scope: :like, url: "/users/#{@user.id}/posts/#{@post.id}/likes", local: true do |form|%>
+    <p>
+      <%= form.check_box :like, onchange: "this.form.submit()" %>
+      <%= form.label :like%>
+    </p>
+  <% end %>
+  
+  <h4>Write your comment below</h4>
+  <%= form_with scope: :comment, url: "/users/#{@user.id}/posts/#{@post.id}/comments", local: true do |form|%>
+  <p>
+    <%= form.label :comment%> <br>
+    <%= form.text_area :text%>
+  </p>
+
+  <%= form.submit%>
+  <p><%= link_to "Back", "/users/#{@user.id}/posts" %></p>
+<%end%>
 </div>
