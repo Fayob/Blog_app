@@ -1,0 +1,13 @@
+<%= form_with scope: :posts, url: "/users/#{@author_id}/posts/create", local: true do |form|%>
+  <p>
+    <%= form.label :title %> <br>
+    <%= form.text_field :title%>
+  </p>
+
+  <p>
+    <%= form.label :description%> <br>
+    <%= form.text_area :text%>
+  </p>
+
+  <%= form.submit%>
+<%end%>
