@@ -1,13 +1,10 @@
 <div>
-  <h2> <%= @user.name %> </h2>
-  <h2> <%= @user.bio %> </h2>
-  <h2> <%= @user.posts_counter %> </h2>
-  <h2> <%= @user.id %> </h2>
+  <h2> Name: <%= @user.name %> </h2>
+  <h2> Bio: <%= @user.bio %> </h2>
   <%@posts.each_with_index do |post, index|%>
     <h4>post #<%= index + 1%></h4>
     <h2>Title: <%=post.title%></h2>
     <p>Description: <%=post.text%></p>
-    <p>id: <%=post.id%></p>
+    <%= link_to "Show all posts", "/users/#{@user.id}/posts"%>
   <%end%>
-  
 </div>
