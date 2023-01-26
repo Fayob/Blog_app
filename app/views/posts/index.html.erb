@@ -1,0 +1,24 @@
+<h1>All Post here</h1>
+
+<article id = 'card'>
+  <img src=<%@user.photo%> alt=<%@user.name%> id = 'card_img'>
+  <h2>User: <%= @user.name%></h2>
+  <p>Bio: <%= @user.bio%></p>
+
+  <% @posts.each_with_index do |post, index| %>
+    <p>post #<%= index + 1 %></p>
+    <div id = 'card_text'>
+      <h2><%= post.title %></h2> 
+      <p><%= post.text%></p>
+      <%comment = Comment.where(post_id: post.id)%>
+      <%comment.each_with_index do |comment, index|%>
+        <% if index < 3%>
+          <%user = User.find(comment.author_id)%>
+          <p> comment #<%= index + 1 %></p> 
+          <p><%= user.name%>: <%= comment.text %></p> 
+        <% end%>
+      <% end %>
+    </div>
+    <%= link_to "Show this post", "/users/#{@user.id}/posts/#{post.id}"%>
+  <% end %>
+</article>
