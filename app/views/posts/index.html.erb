@@ -2,8 +2,8 @@
 
 <article id = 'card'>
   <img src=<%@user.photo%> alt=<%@user.name%> id = 'card_img'>
-  <h2><%= @user.name%></h2>
-  <p><%= @user.bio%></p>
+  <h2>User: <%= @user.name%></h2>
+  <p>Bio: <%= @user.bio%></p>
 
   <% @posts.each_with_index do |post, index| %>
     <p>post #<%= index + 1 %></p>
@@ -12,10 +12,13 @@
       <p><%= post.text%></p>
       <%comment = Comment.where(post_id: post.id)%>
       <%comment.each_with_index do |comment, index|%>
-        <p>comment #<%= index + 1 %></p> 
-        <p><%= comment.text %></p>
+        <% if index < 3%>
+          <%user = User.find(comment.author_id)%>
+          <p> comment #<%= index + 1 %></p> 
+          <p><%= user.name%>: <%= comment.text %></p> 
+        <% end%>
       <% end %>
-     <p>posts id <%= post.id %></p>  <br>
     </div>
+    <%= link_to "Show this post", "/users/#{@user.id}/posts/#{post.id}"%>
   <% end %>
 </article>
