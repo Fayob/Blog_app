@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def new 
+  def new
     @author_id = params[:author_id]
   end
 
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     param = params.require(:posts).permit(:title, :text)
     @author = User.find(params[:author_id])
     # @author = current_user
-    @post = Post.new(author: @author, title: param["title"], text: param["text"])
+    @post = Post.new(author: @author, title: param['title'], text: param['text'])
     @post.comments_counter = 0
     @post.likes_counter = 0
     @post.save!
