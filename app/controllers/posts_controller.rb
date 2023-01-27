@@ -15,17 +15,21 @@ class PostsController < ApplicationController
   end
 
   def new
-    @author_id = params[:author_id]
+    @post = Post.new
+    @author = current_user
   end
 
   def create
     param = params.require(:posts).permit(:title, :text)
-    @author = User.find(params[:author_id])
-    # @author = current_user
+    @author = current_user
     @post = Post.new(author: @author, title: param['title'], text: param['text'])
     @post.comments_counter = 0
     @post.likes_counter = 0
-    @post.save!
-    redirect_to "/users/#{@author.id}/posts"
+    if @post.save
+      flash[:notice] = "Post was created successfully"
+      redirect_to "/users/#{@author.id}/posts"
+    else
+      render 'new'
+    end
   end
 end
