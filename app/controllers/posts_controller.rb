@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post.comments_counter = 0
     @post.likes_counter = 0
     if @post.save
-      flash[:notice] = "Post was created successfully"
+      flash[:notice] = 'Post was created successfully'
       redirect_to "/users/#{@author.id}/posts"
     else
       render 'new'
