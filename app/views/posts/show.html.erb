@@ -11,7 +11,7 @@
     <p><%= user.name %>: <%= comment.text %></p>
   <% end %>
 
-  <%= form_with scope: :like, url: "/users/#{@user.id}/posts/#{@post.id}/likes", local: true do |form|%>
+  <%= form_with scope: :like, url: "/users/#{@user.id}/posts/#{@post.id}/likes" do |form|%>
     <p>
       <%= form.check_box :like, onchange: "this.form.submit()" %>
       <%= form.label :like%>
