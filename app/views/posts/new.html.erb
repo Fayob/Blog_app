@@ -7,7 +7,7 @@
   </ul>
 <% end %>
 
-<%= form_with scope: :posts, url: "/users/#{@author.id}/posts/create", local: true do |form|%>
+<%= form_with scope: :post, url: "/users/#{@author.id}/posts/create", local: true do |form|%>
   <p>
     <%= form.label :title %> <br>
     <%= form.text_field :title%>
