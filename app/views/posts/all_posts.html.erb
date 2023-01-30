@@ -1,0 +1,9 @@
+<h2>List Of All Post</h2>
+
+<% @posts.each do |post|%>
+  <h4>Title: <%= post.title %></h4>
+  <p>Description: <%= post.text %> </p>
+  <% user = User.find(post.author_id)%>
+  <p>Author: <%= user.name%></p>
+  <%= link_to "Show this post", "/users/#{user.id}/posts/#{post.id}"%> <br>
+<% end %>

@@ -2,7 +2,8 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   has_many :comments
   has_many :likes
-  after_create :updates_author_posts_counter
+  after_create :increase_author_posts_counter
+  after_destroy :decrease_author_posts_counter
 
   # after_initialize :set_defaults
   validates :title, presence: true
@@ -16,8 +17,12 @@ class Post < ApplicationRecord
 
   private
 
-  def updates_author_posts_counter
+  def increase_author_posts_counter
     author.increment!(:posts_counter)
+  end
+
+  def decrease_author_posts_counter
+    author.decrement!(:posts_counter)
   end
 
   # def set_defaults
