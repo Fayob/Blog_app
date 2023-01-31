@@ -2,11 +2,16 @@
 
 <div id='card'>
   <% @users.each do |user| %>
-    <img src='<%=user.photo%>' alt=<%=user.name%> id='card_img'>
+    <%# <%= image_tag user.photo, style: 'height: 20%; width: 20%;' %>
     <div id = 'card_text'>
       <h2><%= user.name %> </h2> 
       <p> Number of posts: <%= user.posts_counter %></p>
       <p> <%= link_to "Show this user", "/users/#{user.id}" %> </p>
     </div>
   <% end %>
+  <%= button_to(
+        "Log Out",
+        destroy_user_session_path,
+        method: :delete
+      ) %>
 </div>

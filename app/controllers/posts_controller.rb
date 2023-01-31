@@ -10,8 +10,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:id])
+    @post = Post.includes(:author).find(params[:id])
   end
 
   def new
@@ -22,8 +21,6 @@ class PostsController < ApplicationController
   def create
     @author = current_user
     @post = Post.new(author: @author, title: param['title'], text: param['text'])
-    @post.comments_counter = 0
-    @post.likes_counter = 0
     if @post.save
       flash[:notice] = 'Post was created successfully'
       redirect_to "/users/#{@author.id}/posts"
