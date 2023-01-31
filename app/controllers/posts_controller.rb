@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = Post.where(author: @user, id: params[:id])
     if @post.update(title: param['title'], text: param['text'])
-      flash[:notice] = "Post was updated Successfully"
+      flash[:notice] = 'Post was updated Successfully'
       redirect_to "/users/#{@user.id}/posts"
     else
       render 'edit'
