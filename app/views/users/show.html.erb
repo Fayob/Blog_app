@@ -1,9 +1,13 @@
 <div>
+  <%= image_tag(@user.photo) if @user.photo != nil %> 
   <h2> Name: <%= @user.name %> </h2>
   <h2> Bio: <%= @user.bio %> </h2>
+  <p>Number of posts: <%= @user.posts_counter %> </p>
   <%@posts.each_with_index do |post, index|%>
     <h4>post #<%= index + 1%></h4>
-    <h2>Title: <%=post.title%></h2>
+    <%= link_to "/users/#{@user.id}/posts/#{post.id}" do %>
+      <h2>Title: <%=post.title%></h2>
+    <% end %>
     <p>Description: <%=post.text%></p>
   <%end%>
   <%= link_to "Show all posts", "/users/#{@user.id}/posts"%>
