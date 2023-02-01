@@ -112,6 +112,12 @@ To run tests, run the following command:
   rspec
 ```
 
+If you have difficulty running the test, you can run the command below 
+
+```sh
+  rails db:reset
+```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
