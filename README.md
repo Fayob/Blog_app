@@ -123,6 +123,12 @@ To run tests, run the following command:
 - Twitter: [@fabimworld](https://twitter.com/Fabimworld2536)
 - LinkedIn: [abimbola-ade](http://linkedin.com/in/abimbola-ade/)
 
+👤 **Husseini Mudi Profsain**
+
+- GitHub: [@githubhandle](https://github.com/Profsain)
+- Twitter: [@twitterhandle](https://twitter.com/profsain)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/profsain)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
