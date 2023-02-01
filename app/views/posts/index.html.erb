@@ -20,7 +20,8 @@
       <% end %>
     </div>
     <%= link_to "Show this post", "/users/#{@user.id}/posts/#{post.id}"%> <br>
+    <%= link_to "Edit this post", "/users/#{@user.id}/posts/#{post.id}/edit"%> <br>
   <% end %>
-  <br><br><br>
+  <br><br>
     <%= link_to "Create a new post", "/users/#{@user.id}/posts/new"%>
 </article>
