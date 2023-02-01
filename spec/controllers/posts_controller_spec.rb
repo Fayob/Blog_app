@@ -3,7 +3,7 @@ require './spec/rails_helper'
 describe PostsController, type: :request do
   describe 'test for index method' do
     before(:each) do
-      get '/users/43/posts'
+      get '/users/3/posts'
     end
 
     it 'should test for request status index method' do
@@ -20,7 +20,7 @@ describe PostsController, type: :request do
 
   describe 'test for show method' do
     before(:each) do
-      get '/users/43/posts/8'
+      get '/users/3/posts/1'
     end
     it 'should test for request status of show method' do
       expect(response).to have_http_status(:ok)

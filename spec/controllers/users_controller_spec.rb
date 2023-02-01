@@ -20,7 +20,7 @@ describe UsersController, type: :request do
 
   describe 'test for show method' do
     before(:each) do
-      get '/users/43'
+      get '/users/1'
     end
     it 'should test for request status of show method' do
       expect(response).to have_http_status(:ok)
