@@ -9,7 +9,7 @@ describe UsersController, type: :request do
 
     it 'should render index' do
       get '/'
-      expect(response).to render_template(:users_index)
+      expect(response).to render_template(:index)
     end
 
     it 'should test for response body' do
@@ -27,11 +27,11 @@ describe UsersController, type: :request do
     end
 
     it 'should render show' do
-      expect(response).to render_template(:users_show)
+      expect(response).to render_template(:show)
     end
 
     it 'should test for response body' do
-      expect(response.body).to include('Be a good boy')
+      expect(response.body).to include('Name')
     end
   end
 end
