@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
+  #   user role
   load_and_authorize_resource
-
+  
+  #   get all user post
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: @user.id)
