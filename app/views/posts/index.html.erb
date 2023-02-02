@@ -20,7 +20,10 @@
       <% end %>
     </div>
     <%= link_to "Show this post", "/users/#{@user.id}/posts/#{post.id}"%> <br>
-    <%= link_to "Edit this post", "/users/#{@user.id}/posts/#{post.id}/edit"%> <br>
+    <% if can? :delete, post %>
+      <%= link_to "Edit this post", "/users/#{@user.id}/posts/#{post.id}/edit"%> <br>
+      <%= button_to "Delete this post", "/users/#{@user.id}/posts/#{post.id}/destroy", method: :delete %> <br>
+    <% end %>
   <% end %>
   <br><br>
     <%= link_to "Create a new post", "/users/#{@user.id}/posts/new"%>
