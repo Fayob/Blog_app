@@ -18,6 +18,6 @@ class User < ApplicationRecord
   # private
 
   def admin?
-    self.role == 'admin' ? true : false
+    role == 'admin'
   end
 end

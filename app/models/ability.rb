@@ -1,18 +1,17 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    
-    can :read, Post  # start by defining rules for all users, also not logged ones
+    can :read, Post # start by defining rules for all users, also not logged ones
     return unless user.present?
+
     can :manage, Post, author_id: user.id # if the user is logged in can manage it's own posts
     can :delete, Comment, author_id: user.id # if the user is logged in can delete it's own comments
     can :create, Comment # logged in users can also create comments
     # return unless user.manager? # if the user is a manager we give additional permissions
     # can :manage, Comment # like managing all comments in the website
     return unless user.admin?
+
     can :manage, :all # finally we give all remaining permissions only to the admins
 
     # Define abilities for the user here. For example:
