@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :posts, foreign_key: :author_id
-  has_many :comments, foreign_key: 'author_id'
-  has_many :likes, foreign_key: :author_id
+  has_many :posts, foreign_key: :author_id, dependent: :delete_all
+  has_many :comments, foreign_key: 'author_id', dependent: :delete_all
+  has_many :likes, foreign_key: :author_id, dependent: :delete_all
 
   # before_validation :set_defaults, on: :create
   validates :name, presence: true
@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   # private
 
-  # def set_defaults
-  #   posts_counter = 0
-  # end
+  def admin?
+    self.role == 'admin' ? true : false
+  end
 end
