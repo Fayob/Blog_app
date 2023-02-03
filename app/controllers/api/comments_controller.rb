@@ -7,11 +7,11 @@ class Api::CommentsController < ApplicationController
 
     render json: post.comments
   end
-  
+
   def create
     user = User.find(params[:user_id])
     post = Post.find(params[:post_id])
-    comment = Comment.new(author: user, post: post, text: param['text'])
+    comment = Comment.new(author: user, post:, text: param['text'])
 
     if comment.save
       render json: comment, status: 200
