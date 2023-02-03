@@ -5,6 +5,7 @@ class ApplicationController < ActionController::API
 
   before_action :authenticate_request
 
+
   respond_to :json
 
   # def encode_token(payload)
