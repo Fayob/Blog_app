@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   # protect_from_forgery with: :exception
+  # get current login user
   attr_reader :current_user
 
   respond_to :json
