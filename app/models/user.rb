@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # acts_as_token_authenticatable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,7 +8,6 @@ class User < ApplicationRecord
   has_many :comments, foreign_key: 'author_id', dependent: :delete_all
   has_many :likes, foreign_key: :author_id, dependent: :delete_all
 
-  # before_validation :set_defaults, on: :create
   validates :name, presence: true
   validates :posts_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
 
