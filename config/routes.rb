@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
-  scope :api, defaults: {format: :json} do
-    devise_for :users 
-  end
+  # scope :api, defaults: {format: :json} do
+  #   devise_for :users 
+  # end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  namespace :api do
+  namespace :api, defaults: {format: :json} do
     resources :users, only: [:show] do
       resources :posts, only: [:show] do
         resources :comments, only: [:create]
       end
     end
   end
+
+  post "/api/auth/login", to: "api/authentication#login"
   
 
   root "users#index"
