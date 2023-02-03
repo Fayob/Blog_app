@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   namespace :api, defaults: {format: :json} do
-    resources :users, only: [:show] do
-      resources :posts, only: [:show] do
-        resources :comments, only: [:create]
+    resources :users, only: [:index] do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
       end
     end
   end
