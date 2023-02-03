@@ -14,11 +14,11 @@ class Api::CommentsController < ApplicationController
     comment = Comment.new(author: user, post:, text: param['text'])
 
     if comment.save
-      render json: comment, status: 200
+      render json: comment, status: :created
     else
       render json: {
         error: 'Unable to create comment'
-      }
+      }, status: 401
     end
   end
 
