@@ -1,14 +1,13 @@
 class Api::CommentsController < ApplicationController
-
   def create
     post = Post.find(params[:post_id])
-    comment = Comment.new(author: @current_user, post: post, text: param["text"] )
+    comment = Comment.new(author: @current_user, post:, text: param['text'])
 
-    if comment.save 
+    if comment.save
       render json: comment, status: 200
     else
       render json: {
-        error: "Unable to create comment"
+        error: 'Unable to create comment'
       }
     end
   end
