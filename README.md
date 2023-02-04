@@ -123,6 +123,12 @@ To run tests, run the following command:
 - Twitter: [@fabimworld](https://twitter.com/Fabimworld2536)
 - LinkedIn: [abimbola-ade](http://linkedin.com/in/abimbola-ade/)
 
+👤 **Husseini Mudi**
+
+- GitHub: [@profsain](https://github.com/profsain)
+- Twitter: [@profsain](https://twitter.com/profsain)
+- LinkedIn: [@Profsain](http://linkedin.com/in/profsain/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -153,19 +159,6 @@ If you like this project, please leave a star 😁
 We would like to thank the Microverse staff for all the efforts they put in define the requirements of this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-- **Can I reuse this code?**
-
-  - Yes, feel free to fork it
-
-- **Do I need knowledge of Ruby to use this project?**
-
-  - No you do not. -->
-
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 ## 📝 License <a name="license"></a>
 

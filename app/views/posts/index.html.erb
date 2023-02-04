@@ -8,7 +8,7 @@
   <% @posts.each_with_index do |post, index| %>
     <div id = 'card_text'>
       <p>post #<%= index + 1 %></p>
-      <h2><%= post.title %></h2> 
+      <h3><%= post.title %></h3> 
       <p><%= post.text%></p>
       <%comment = Comment.where(post_id: post.id)%>
       <%comment.each_with_index do |comment, index|%>

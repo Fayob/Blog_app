@@ -1,6 +1,29 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.after_initialize do
+    Bullet.enable = false
+    Bullet.sentry = true
+    Bullet.alert = true
+    Bullet.bullet_logger = true
+    Bullet.console = true
+    # Bullet.xmpp = { :account  => 'bullets_account@jabber.org',
+    #                 :password => 'bullets_password_for_jabber',
+    #                 :receiver => 'your_account@jabber.org',
+    #                 :show_online_status => true }
+    Bullet.rails_logger = true
+    Bullet.honeybadger = true
+    Bullet.bugsnag = true
+    Bullet.appsignal = true
+    Bullet.airbrake = true
+    Bullet.rollbar = true
+    Bullet.add_footer = true
+    Bullet.skip_html_injection = false
+    # Bullet.stacktrace_includes = [ 'your_gem', 'your_middleware' ]
+    # Bullet.stacktrace_excludes = [ 'their_gem', 'their_middleware', ['my_file.rb', 'my_method'], ['my_file.rb', 16..20] ]
+    # Bullet.slack = { webhook_url: 'http://some.slack.url', channel: '#default', username: 'notifier' }
+  end
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
@@ -40,6 +63,12 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
