@@ -1,11 +1,10 @@
 class Post < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: :author_id
-  has_many :comments
-  has_many :likes
+  has_many :comments, dependent: :delete_all
+  has_many :likes, dependent: :delete_all
   after_create :increase_author_posts_counter
   after_destroy :decrease_author_posts_counter
 
-  # after_initialize :set_defaults
   validates :title, presence: true
   validates :title, length: { maximum: 250 }
   validates :comments_counter, numericality: { only_integer: true }, comparison: { greater_than_or_equal_to: 0 }
@@ -24,9 +23,4 @@ class Post < ApplicationRecord
   def decrease_author_posts_counter
     author.decrement!(:posts_counter)
   end
-
-  # def set_defaults
-  #   comments_counter = 0
-  #   likes_counter = 0
-  # end
 end

@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  #   user role
+  load_and_authorize_resource
+
+  #   get all user post
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: @user.id)
@@ -15,11 +19,11 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @author = current_user
+    @author = User.find(params[:user_id])
   end
 
-  def create
-    @author = current_user
+  def create_post
+    @author = User.find(params[:user_id])
     @post = Post.new(author: @author, title: param['title'], text: param['text'])
     if @post.save
       flash[:notice] = 'Post was created successfully'
@@ -43,6 +47,13 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @user = User.find(params[:user_id])
+    @post = Post.where(author: @user, id: params[:id])
+    @post.destroy(@post.ids)
+    redirect_to "/users/#{@user.id}/posts"
   end
 
   private

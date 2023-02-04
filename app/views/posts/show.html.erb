@@ -9,6 +9,9 @@
   <%user = User.find(comment.author_id)%>
     <p>comment #<%= index + 1 %></p>
     <p><%= user.name %>: <%= comment.text %></p>
+    <% if can? :delete, comment %>
+      <%= button_to "Delete this comment", "/users/#{@post.author.id}/posts/#{@post.id}/comment/#{comment.id}", method: :delete %> <br>
+    <% end %>
   <% end %>
 
   <%= form_with scope: :like, url: "/users/#{@post.author.id}/posts/#{@post.id}/likes" do |form|%>
@@ -20,12 +23,17 @@
   
   <h4>Write your comment below</h4>
   <%= form_with scope: :comment, url: "/users/#{@post.author.id}/posts/#{@post.id}/comments", local: true do |form|%>
-  <p>
-    <%= form.label :comment%> <br>
-    <%= form.text_area :text%>
-  </p>
+    <p>
+      <%= form.label :comment%> <br>
+      <%= form.text_area :text%>
+    </p>
 
-  <%= form.submit%>
+    <%= form.submit%>
+  <%end%>
   <p><%= link_to "Back", "/users/#{@post.author.id}/posts" %></p>
-<%end%>
+
+  <% if can? :delete, @post %>
+    <%= link_to "Edit this post", "/users/#{@post.author.id}/posts/#{@post.id}/edit"%> <br>
+    <%= button_to "Delete this post", "/users/#{@post.author.id}/posts/#{@post.id}/destroy", method: :delete %> <br>
+  <% end %>
 </div>

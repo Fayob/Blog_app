@@ -6,5 +6,7 @@
     <h2>Title: <%=post.title%></h2>
     <p>Description: <%=post.text%></p>
   <%end%>
-  <%= link_to "Show all posts", "/users/#{@user.id}/posts"%>
+  <%= link_to "Show all posts", "/users/#{@user.id}/posts"%> <br>
+
+  <%= link_to "Create a new post", "/users/#{@user.id}/posts/new"%>
 </div>
