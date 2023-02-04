@@ -47,6 +47,13 @@ gem 'bootsnap', require: false
 
 # Devise gem
 gem 'devise'
+# gem 'devise_token_auth'
+
+gem 'jwt'
+
+# simple token authentication
+
+# gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
 # Use Sass to process CSS
 # gem "sassc-rails"

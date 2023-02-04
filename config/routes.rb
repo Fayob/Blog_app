@@ -1,8 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # scope :api, defaults: {format: :json} do
+  #   devise_for :users 
+  # end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  namespace :api, defaults: {format: :json} do
+    resources :users, only: [:index] do
+      resources :posts, only: [:index] do
+        resources :comments, only: [:index, :create]
+      end
+    end
+  end
+
+  post "/api/auth/login", to: "api/authentication#login"
+  
+
   root "users#index"
+  get "/users/v1", to: "api#index"
   get "/users/:id", to: "users#show"
   get "/users/:user_id/posts", to: "posts#index"
   get "/users/:user_id/all_posts", to: "posts#all_posts"
