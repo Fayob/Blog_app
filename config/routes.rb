@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   # scope :api, defaults: {format: :json} do
   #   devise_for :users 
   # end
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
     end
   end
 
+  # mount SwaggerUiRails::Engine, at: "/api-docs"
+  # mount Api::Docs, at: "/api/docs"
   post "/api/auth/login", to: "api/authentication#login"
   
 
