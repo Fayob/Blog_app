@@ -105,6 +105,6 @@ end
 gem 'cssbundling-rails' # Install bootstrap 5
 gem 'jsbundling-rails' # needed for bootstrap javascript
 gem 'rswag'
-gem 'swagger-ui_rails' 
 gem 'swagger-blocks'
 gem 'swagger-docs'
+gem 'swagger-ui_rails'

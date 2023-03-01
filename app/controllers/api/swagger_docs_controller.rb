@@ -21,8 +21,6 @@ class Api::SwaggerDocsController < ActionController::Base
   end
 end
 
-
-
 # class API::DocsController < ActionController::Base
 #   include Swagger::Blocks
 

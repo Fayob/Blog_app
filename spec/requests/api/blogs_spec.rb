@@ -1,11 +1,8 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/posts', type: :request do
-
   describe 'Blogs API' do
-
     path '/api/users/{user_id}/posts' do
-
       post 'Fetch all posts' do
         tags 'Blogs'
         consumes 'application/json'
@@ -13,12 +10,12 @@ RSpec.describe 'api/posts', type: :request do
 
         response '200', 'posts founds' do
           schema type: :object,
-            properties: {
-              id: { type: :integer },
-              title: { type: :string },
-              content: { type: :string }
-            },
-            required: [ 'id', 'title', 'content' ]
+                 properties: {
+                   id: { type: :integer },
+                   title: { type: :string },
+                   content: { type: :string }
+                 },
+                 required: %w[id title content]
 
           let(:id) { Blog.create(title: 'foo', content: 'bar').id }
           run_test!

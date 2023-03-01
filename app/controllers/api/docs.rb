@@ -20,15 +20,13 @@ class Api::Docs
           key :properties, {
             id: { type: :integer },
             name: { type: :string },
-            description: { type: :string },
+            description: { type: :string }
           }
         end
       end
     end
   end
 end
-
-
 
 # class Api::Docs
 #   include Swagger::Blocks

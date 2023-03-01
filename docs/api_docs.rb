@@ -1,12 +1,12 @@
-Swagger::Blocks.configure do |config|
+Swagger::Blocks.configure do |config| # rubocop:todo Metrics/BlockLength
   config.base_path = '/api/v1'
   config.swagger_root = File.join(Rails.root, 'public', 'docs')
   config.api_version = '1.0.0'
   config.title = 'Blog App API'
   config.description = 'Documentation for blog app API'
-  
+
   swagger_schema :User do
-    key :required, [:id, :name, :email, :photo, :bio]
+    key :required, %i[id name email photo bio]
     property :id do
       key :type, :integer
       key :format, :int64
@@ -24,7 +24,7 @@ Swagger::Blocks.configure do |config|
       key :type, :text
     end
   end
-  
+
   swagger_path '/users' do
     operation :get do
       key :summary, 'Get a list of users'
@@ -38,20 +38,20 @@ Swagger::Blocks.configure do |config|
         schema do
           key :type, :array
           items do
-            key :'$ref', :User
+            key :$ref, :User
           end
         end
       end
       response :default do
         key :description, 'unexpected error'
         schema do
-          key :'$ref', :ErrorModel
+          key :$ref, :ErrorModel
         end
       end
     end
   end
-  
-  swagger_path '/users/{id}' do
+
+  swagger_path '/users/{id}' do # rubocop:todo Metrics/BlockLength
     parameter do
       key :name, :id
       key :in, :path
@@ -73,13 +73,13 @@ Swagger::Blocks.configure do |config|
       response 200 do
         key :description, 'successful operation'
         schema do
-          key :'$ref', :User
+          key :$ref, :User
         end
       end
       response :default do
         key :description, 'unexpected error'
         schema do
-          key :'$ref', :ErrorModel
+          key :$ref, :ErrorModel
         end
       end
     end
