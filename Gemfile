@@ -73,6 +73,9 @@ group :development do
   # bullet gem
   gem 'bullet'
 
+  # rack cors to enable request from a frontend outside the app
+  gem 'rack-cors'
+
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -101,3 +104,7 @@ end
 
 gem 'cssbundling-rails' # Install bootstrap 5
 gem 'jsbundling-rails' # needed for bootstrap javascript
+gem 'rswag'
+gem 'swagger-ui_rails' 
+gem 'swagger-blocks'
+gem 'swagger-docs'
